@@ -1,0 +1,161 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Buzzle HTML",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#funcblocks"
+		},
+		{
+			"include": "#varblocks"
+		},
+		{
+			"include": "#vars"
+		},
+		{
+			"include": "#commsbuzzle"
+		},
+		{
+			"include": "#commshtml"
+		},
+		{
+			"include": "#tagbrackets"
+		},
+		{
+			"include": "#htmlkeys"
+		},
+		{
+			"include": "#intagkeys"
+		},
+		{
+			"include": "#tagparams"
+		},
+		{
+			"include": "#chars"
+		},
+		{
+			"include": "#digits"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.buzzle",
+				"match": "\\b(if|for|debug|let|block|endblock|extends|load|static|url|notification)\\b"
+			}]
+		},
+		"htmlkeys": {
+			"patterns": [{
+				"name": "keyword.control.buzzle",
+				"match": "\\b(if|else|for|debug|let|block|endblock|extends|load|static|url|document|window|goto|while|break|do|continue|catch|finally|case|default|switch|with)\\b"
+			}]
+		},
+		"intagkeys": {
+			"patterns": [{
+				"name": "intagkeys.control.buzzle",
+				"match": "<\\s{0,}\\S{0,}\\s{0,9}>"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.buzzle",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.html",
+					"match": "\\\\."
+				}
+			]
+		},
+		"chars": {
+			"name": "string.quoted.double.buzzle",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.html",
+					"match": "\\\\."
+				}
+			]
+		},
+		"varblocks": {
+			"name": "block.var.buzzle",
+			"patterns": [
+				{
+					"name": "block.control.buzzle",
+					"match": "\\[\\[|\\]\\]"
+				}
+			]
+		},
+		"funcblocks": {
+			"name": "block.func.buzzle",
+			"patterns": [
+				{
+					"name": "block.control.buzzle",
+					"match": "\\[\\$|\\$\\]"
+				}
+			]
+		},
+		"tagbrackets": {
+			"name": "tagbracket.content.buzzle",
+			"patterns": [
+				{
+					"name": "tagbracket.control.buzzle",
+					"match": "<\\s{0,}\/.{0,}|\\s{0,}!|(<\\s{0,}[^ >]{0,}>)|<\\s{0,}[^ ]{0,}|>|\/\\s{0,9}>"
+				}
+			]
+		},
+		"tagparams": {
+			"name": "tagparam.content.buzzle",
+			"patterns": [
+				{
+					"name": "tagparam.control.buzzle",
+					"match": "\\S{0,}=(?=\")"
+				}
+			]
+		},
+		"vars": {
+			"name": "variable.content.buzzle",
+			"patterns": [
+				{
+					"name": "variable.control.buzzle",
+					"match": "\\$\\S{0,}\\b"
+				}
+			]
+		},
+		"commsbuzzle": {
+			"name": "commentbuzzle.content.buzzle",
+			"patterns": [
+				{
+					"name": "comment.control.buzzle",
+					"match": "\\[#[^#]{0,}#\\]"
+				}
+			]
+		},
+		"commshtml": {
+			"name": "commenthtml.content.buzzle",
+			"patterns": [
+				{
+					"name": "comment.control.buzzle",
+					"match": "<!--[^^]{0,}-->"
+				}
+			]
+		},
+		"digits": {
+			"name": "digit.content.buzzle",
+			"patterns": [
+				{
+					"name": "digit.control.buzzle",
+					"match": "\b\\d{1,}\b"
+				}
+			]
+		}
+		
+	},
+	"scopeName": "source.html"
+}

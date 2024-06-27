@@ -1,0 +1,96 @@
+{
+  "name": "buzzle-syntax",
+  "displayName": "Buzzle Syntax",
+  "description": "Syntax highligth for Buzzle python web-framework to work with html templates",
+  "version": "0.5.1",
+  "icon": "src/imgs/Buzzle.png",
+  "keywords": [
+    "Buzzle HTML",
+    "buzzle",
+    "html"
+  ],
+  "contributors": [
+    {
+      "name": "Tagir Khalilov",
+      "url": "https://github.com/geekceo"
+    }
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "buzzle-html",
+      "aliases": ["Buzzle HTML", "buzzle","html"],
+      "extensions": [".html"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "src/imgs/Buzzle.png",
+        "dark": "src/imgs/Buzzle.png"
+      }
+    }],
+    "grammars": [{
+      "language": "buzzle-html",
+      "scopeName": "source.html",
+      "path": "./syntaxes/html.tmLanguage.json"
+    }],
+    "configurationDefaults": {
+      "editor.insertSpaces": false,
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "string.quoted.double.buzzle",
+            "settings": {
+              "foreground": "#6A8759"
+            }
+          },
+          {
+            "scope": "keyword.control.buzzle",
+            "settings": {
+              "foreground": "#CC7832"
+            }
+          },
+          {
+            "scope": "block.control.buzzle",
+            "settings": {
+              "foreground": "#8888C6"
+            }
+          },
+          {
+            "scope": "variable.control.buzzle",
+            "settings": {
+              "foreground": "#BBB529"
+            }
+          },
+          {
+            "scope": "comment.control.buzzle",
+            "settings": {
+              "foreground": "#808080"
+            }
+          },
+          {
+            "scope": "tagbracket.control.buzzle",
+            "settings": {
+              "foreground": "#8888C6"
+            }
+          },
+          {
+            "scope": "tagparam.control.buzzle",
+            "settings": {
+              "foreground": "#CC7832"
+            }
+          },
+          {
+            "scope": "digit.control.buzzle",
+            "settings": {
+              "foreground": "#6897BB"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
